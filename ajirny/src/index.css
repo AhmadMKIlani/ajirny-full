@@ -419,9 +419,13 @@ input {
 
 /*--------------room--------*/
 /*--------------wrapper2--------*/
+<<<<<<< HEAD
 /* .wrapper2 {
   background-image: url("../image/w1.jpg");
 } */
+=======
+
+>>>>>>> 4dfa39e0063f043d2b476b08f4e74a6cc596679b
 
 .wrapper2 .text {
   left: 10%;
