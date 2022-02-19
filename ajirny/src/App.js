@@ -4,18 +4,19 @@ import Category from './components/home/Lcategory/Category';
 import Footer from "./components/footer/Footer";
 import Testimonials from './components/testimonials/Testimonials';
 import { Partners } from './components/partners/Partners';
-import Registration from './components/registration/Registration'
-
+import Registration from './components/registration/Registration';
+import Login from './components/login/Login';
 function App() {
   return (
     <div className="App">
-      {/* <Nav/>
-      <Landing/>
+      <Nav/>
+      {/* <Landing/>
       <Category/>
       <Testimonials/>
       <Partners/>
       <Footer/> */}
-      <Registration/>
+      {/* <Registration/> */}
+      <Login />
     </div>
   );
 }

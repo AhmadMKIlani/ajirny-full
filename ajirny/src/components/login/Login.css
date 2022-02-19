@@ -1,4 +1,4 @@
-.registration {
+.login {
     text-align: center;
     display: flex;
     justify-content: flex-end;
@@ -8,9 +8,9 @@
     height: 100vh;
 }
 
-.registration__container {
-    margin: 5vh 10vw;
-    height: 400px;
+.login__container {
+    margin: 8vh 10vw;
+    height: 350px;
     width: 25vw;
     padding-top: 30px;
     border-radius: 60px;
@@ -18,7 +18,7 @@
     background-color: #fff;
 }
 
-.registration__form input {
+.login__form input {
     display: block;
     background-color: #fff;
     width: 60%;
@@ -27,20 +27,21 @@
     color: black;
     height: 6vh;
     margin: 2vh;
+    text-transform: lowercase;
 }
 
-.registration__form label {
+.login__form label {
     margin-right: 1vw;
     font-size: 1.3em;
 }
 
-.registration__form--field {
+.login__form--field {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.registration__formBtn {
+.login__formBtn {
     background-color: gray;
     padding: 1.5vh 2vw;
     border-radius: 10px;
@@ -50,10 +51,10 @@
     margin-top: 1vh;
 }
 
-.registration__title {
+.login__title {
     color: rgb(59, 59, 59);
 }
 
-.registration__form--error {
+.login__form--error {
     color: red;
 }
