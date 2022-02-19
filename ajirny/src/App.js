@@ -1,8 +1,10 @@
 import Landing from './components/home/Landing';
+import Registration from './components/registration/Registration'
 function App() {
   return (
     <div className="App">
-      <Landing/>
+      {/* <Landing/> */}
+      <Registration />
     </div>
   );
 }
