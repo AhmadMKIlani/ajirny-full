@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
 function Login() {
@@ -6,7 +7,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [inputError, setInputError] = useState(false);
     const [currentUser, setCurrentUser] = useState('');
-
+    const navigate = useNavigate();
 
     const login = (e) => {
         e.preventDefault();
@@ -26,14 +27,12 @@ function Login() {
             .catch(error => {
                 console.log(error.response)
             });
-            setEmail('');
-            setPassword('');
+            navigate('/');
 
     }
     return (
         <div className='login'>
             <div className="login__container">
-                <p>{currentUser}</p>
                 <h1 className='login__title'>Login</h1>
                 <form className='login__form' onSubmit={login}>
 

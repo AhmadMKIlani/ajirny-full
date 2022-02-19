@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Registration.css';
 import axios from 'axios';
 function Registration() {
@@ -10,7 +11,7 @@ function Registration() {
 
     const regexPassword = /^(?=.*[A-Z])(?=.*[@$!%*#?&])(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
     const regexEmail = /^[A-ZA-z0-9._-]+@(hotmail|gmail|yahoo|outlook).com$/;
-
+    const navigate = useNavigate();
     const register = (e) => {
         e.preventDefault();
         if (!regexEmail.test(email)) {
@@ -19,7 +20,7 @@ function Registration() {
         if (!regexPassword.test(password)) {
             setPasswordError(() => true);
         }
-        if (name !== '' && (emailError || passwordError !== true)) {
+        if (name !== '' && (emailError || passwordError === true)) {
             setEmailError('');
             setPasswordError('');
             const obj = {
@@ -27,15 +28,14 @@ function Registration() {
                 email: email,
                 password: password
             }
+            localStorage.setItem('current-user', JSON.stringify(obj));
             axios.post('http://localhost/php/register.php', obj)
                 .then(res => console.log(res.data))
                 .catch(error => {
                     console.log(error.response)
                 });
+            navigate('/');
         }
-        setName('');
-        setEmail('');
-        setPassword('');
     }
     return (
         <div className='registration'>
@@ -44,16 +44,16 @@ function Registration() {
                 <form className='registration__form' onSubmit={register}>
                     <div className="registration__form--field">
                         <label htmlFor="name">Name</label>
-                        <input type="text" id='name' onChange={(e) => setName(e.target.value)} value={name}/>
+                        <input type="text" id='name' onChange={(e) => setName(e.target.value)} value={name} />
                     </div>
                     <div className="registration__form--field">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id='email' onChange={(e) => setEmail(e.target.value)} value={email}/> <br />
+                        <input type="email" id='email' onChange={(e) => setEmail(e.target.value)} value={email} /> <br />
                         {emailError && <p className='registration__form--error'>Wrong Email Format</p>}
                     </div>
                     <div className="registration__form--field">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id='password' onChange={(e) => setPassword(e.target.value)} value={password}/> <br />
+                        <input type="password" id='password' onChange={(e) => setPassword(e.target.value)} value={password} /> <br />
                         {passwordError && <p className='registration__form--error'>Should be 8 characters(capital, small, numbers and special characters)</p>}
                     </div>
                     <button type='submit' className='registration__formBtn'>Sign up</button>

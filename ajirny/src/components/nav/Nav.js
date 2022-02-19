@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import "./Nav.css";
+import { Outlet, Link } from "react-router-dom";
+
+
 export const Nav = () => {
   const [currentUser, setCurrentUser] = useState('');
   const [logout, setLogout] = useState(false);
@@ -15,22 +18,29 @@ export const Nav = () => {
   }, [])
   const handleLogout =()=>{
     localStorage.removeItem('current-user');
+    setLogout(false);
   }
   return (
     <div>
-       <header className="header">
-        <a href="*" className="logo">CSS Nav</a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
-        <ul className="menu">
-            <li><a href="#work">Our Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="*">{currentUser}</a></li>
-          {logout && <li><a href="" onClick={handleLogout}>logout</a></li>}
+       <header class="header">
+        <Link to='/' class="logo"> Ajirny </Link>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><Link to='/categories'> Categories </Link></li>
+            <li><Link to='/about'> About </Link></li>
+            <li><Link to='/contact'> Contact </Link></li>
+            { !logout &&
+              <><li><Link to='/login'> Login </Link></li>
+            <li><Link to='/registration'> Register </Link></li></>
+            }
+            {logout && <>
+            <li><Link to ='/user'>{currentUser}</Link></li>
+            <li onClick={handleLogout}><Link to ='/'>logout</Link></li>
+            </>}
         </ul>
         </header>
+        <Outlet />
     </div>
   )
 }

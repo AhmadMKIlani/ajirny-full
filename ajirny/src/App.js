@@ -1,23 +1,31 @@
 import Landing from './components/home/Landing';
 import {Nav} from "./components/nav/Nav";
-import Category from './components/home/Lcategory/Category';
 import Footer from "./components/footer/Footer";
-import Testimonials from './components/testimonials/Testimonials';
-import { Partners } from './components/partners/Partners';
 import Registration from './components/registration/Registration';
 import Login from './components/login/Login';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import React from 'react';
+import Category from './components/category/Category';
+
+
 function App() {
   return (
+    <Router>
     <div className="App">
       <Nav/>
-      {/* <Landing/>
-      <Category/>
-      <Testimonials/>
-      <Partners/>
-      <Footer/> */}
-      {/* <Registration/> */}
-      <Login />
+      <Routes>
+        <Route path="/" element={<Landing/>}/>
+        <Route path="/categories" element={<Category/>}/>
+        <Route path="/registration" element={<Registration/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
+      <Footer/>
     </div>
+    </Router>
   );
 }
 
