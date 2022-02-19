@@ -1,19 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './contact.css'
-import { useForm } from "react-hook-form";
-// import axios from 'axios';
+// import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 function Contact() {
 
-    const { register, handleSubmit} = useForm();
-     const onSubmit = data => {
-         console.log(data)
-//         axios.post('http://localhost/ajirny-full/php/contact.php',data)
-//     .then(res=> console.log(res.data))
-//     .catch(error => {
-//       console.log(error.response)
-//   });
+    const [ {name, email, message} , setContact ] = useState ({name : "" , email:"" , message: ""})
+
+     const onSubmit = (e) => {
+     e.preventDefault();
+        let formData = new FormData();
+      formData.append('name', name)
+      formData.append('email', email)
+      formData.append('message', message)
+
+    axios.post('http://localhost/ajirny-full/php/contact.php',formData)
+    .then(res=> console.log(res))
+    .catch(error => {
+      console.log(error.response)
+  });
+   
      }
+
+     const formValuesHandler = (e) => {
+        setContact( (preState) => {
+         return (
+            { ...preState , [e.target.name] : e.target.value }  
+         )
+        } )
+      }
+
+
       
 
   return (
@@ -42,18 +59,20 @@ function Contact() {
       <div className="right-side"  >
         <div className="topic-text">Send us a message</div>
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-      <form action="#"  onClick={handleSubmit(onSubmit)} >
+      <form action="#"  onClick={onSubmit} >
         <div className="input-box">
-          <input type="text" placeholder="Enter your name" name="name" ref={register} />
+          <input type="text" placeholder="Enter your name" name="name" onChange={formValuesHandler} />
         </div>
         <div className="input-box">
-          <input type="text" placeholder="Enter your email" name="email" ref={register} />
+          <input type="text" placeholder="Enter your email" name="email" onChange={formValuesHandler} />
         </div>
         <div className="input-box message-box">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message" name="message" ></textarea>
+          <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message" name="message" onChange={formValuesHandler} ></textarea>
         </div>
         <div className="button">
-          <input type="button" value="Send Now" />
+          <button type="submit" >
+          Send Now
+          </button>
         </div>
       </form>
     </div>
