@@ -1,46 +1,53 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react';
+import axios from 'axios';
 import "./Category.css";
-
 const Category = () => {
+
+    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState([])
+  
+    useEffect(() => {
+      const fetchData = async () =>{
+        setLoading(true);
+        try {
+          const {data: response} = await axios.get('http://localhost/ajirny-full/php/categories.php');
+          setData(response);
+        } catch (error) {
+          console.error(error.message);
+        }
+        setLoading(false);
+      }
+  
+      fetchData();
+    }, []);
+
+
+
   return (
 
-  <div class=" blue grid-wrapper">
-    <div class="box zone">
-      <a href="index.html" className='cat-link'>
-      <h2 className='cat-text'>Cat1</h2>
-      <img src="imgaes/place1.jpg" alt='category1'/>
-      </a>
+  <div>
+    <div className=" blue grid-wrapper">
+
+    {loading && <div>Loading</div>}
+    {!loading && (
+    
+      <>
+        {data.map(category => (<>
+
+        
+        <div className="box zone">
+            <a href="index.html" className='cat-link'>
+            <h2 className='cat-text'>{category.name}</h2>
+            <img src={category.image} alt={category.name}/>
+            </a>
+        </div>
+        
+
+        </>))}
+      </>
+    )}
+
     </div>
-    <div class="box zone">
-      <a href="index.html" className='cat-link'>
-      <h2 className='cat-text'>Cat2</h2>
-      <img src="imgaes/place2.jpg" alt='category1'/>
-      </a>
-      </div>
-    <div class="box zone">
-      <a href="index.html" className='cat-link'>
-      <h2 className='cat-text'>Cat3</h2>
-      <img src="imgaes/place3.jpg" alt='category1'/>
-      </a>
-      </div>
-    <div class="box zone">
-      <a href="index.html" className='cat-link'>
-      <h2 className='cat-text'>Cat4</h2>
-      <img src="imgaes/place4.jpg" alt='category1'/>
-      </a>
-      </div>
-    <div class="box zone">
-      <a href="index.html" className='cat-link'>
-      <h2 className='cat-text'>Cat5</h2>
-      <img src="imgaes/place5.jpg" alt='category1'/>
-      </a>
-      </div>
-    <div class="box zone">
-      <a href="index.html" className='cat-link'>
-      <h2 className='cat-text'>Cat6</h2>
-      <img src="imgaes/place6.jpg" alt='category1'/>
-      </a>
-      </div>
   </div>
 
 
@@ -49,3 +56,4 @@ const Category = () => {
 
 
 export default Category;
+

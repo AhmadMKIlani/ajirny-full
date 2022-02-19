@@ -20,11 +20,11 @@
     padding: 5%;
     width: 100%;
     height: 100%;
+    /* -webkit-box-shadow: inset 0 0 10px 10px #000;    
+    -moz-box-shadow: inset 0 0 10px 10px #000;
+    box-shadow: inset 0 0 10px 10px #000; */
 }
 
-.cat-link{
-    height: 100%;
-}
 
 .blue{
     padding-top: 100px;
@@ -48,6 +48,7 @@
 .cat-link{
     display: flex;
     position: relative;
+    height: 100%;
 }
 
 .cat-text{
