@@ -1,5 +1,4 @@
 <?php
-
 header("Access-Control-Allow-Origin: * ");
 $db ="ajirny";
 $pass= "";
@@ -8,7 +7,6 @@ $userName = "root";
 $id = '';
 
 $conn = mysqli_connect($server,$userName,$pass,$db);
-
 
 $method = $_SERVER['REQUEST_METHOD'];
 
