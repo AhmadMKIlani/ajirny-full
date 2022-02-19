@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState} from 'react'
 import './Registration.css';
 import axios from 'axios';
 function Registration() {
@@ -20,38 +19,48 @@ function Registration() {
             setPasswordError(() => true);
         }
         if (name !== '' && (emailError || passwordError !== true)) {
-            const formData = new FormData();
-            formData.append("name", name);
-            formData.append("email", email);
-            formData.append("password", password);
-            axios({
-                method: "post",
-                url: "http://localhost/ajirny-full/php/sign.php",
-                data: formData,
-                config: { headers: { "content-Type": "multipart/form-data" } },
-            })
-                .then((res) => {
-                    if (res.data !== "The email you entered already exists") {
-                        const obj = {
-                            id: res.data.id,
-                            name: res.data.name,
-                            email: res.data.email,
-                            password: res.data.password
-                        };
-                        localStorage.setItem("users", JSON.stringify(obj));
-                        if (localStorage.getItem("url")) {
-                            localStorage.removeItem("url");
-                            window.location.href = "http://localhost:3000/service";
-                        }
-                        else {
-                            window.location.assign("/");
-                        }
-
-                    }
-                })
-                .catch((error) => {
-                    console.log(error.response);
+            const obj = {
+                name: name,
+                email: email,
+                password:password
+            }
+            axios.post('http://localhost/php/register.php', obj)
+                .then(res => console.log(res.data))
+                .catch(error => {
+                    console.log(error.response)
                 });
+            // const formData = new FormData();
+            // formData.append("name", name);
+            // formData.append("email", email);
+            // formData.append("password", password);
+            // axios({
+            //     method: "post",
+            //     url: "http://localhost/ajirny-full/php/sign.php",
+            //     data: formData,
+            //     config: { headers: { "content-Type": "multipart/form-data" } },
+            // })
+            //     .then((res) => {
+            //         if (res.data !== "The email you entered already exists") {
+            //             const obj = {
+            //                 id: res.data.id,
+            //                 name: res.data.name,
+            //                 email: res.data.email,
+            //                 password: res.data.password
+            //             };
+            //             localStorage.setItem("users", JSON.stringify(obj));
+            //             if (localStorage.getItem("url")) {
+            //                 localStorage.removeItem("url");
+            //                 window.location.href = "http://localhost:3000/service";
+            //             }
+            //             else {
+            //                 window.location.assign("/");
+            //             }
+
+            //         }
+            //     })
+            //     .catch((error) => {
+            //         console.log(error.response);
+            //     });
         }
     }
     return (
