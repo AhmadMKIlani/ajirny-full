@@ -1,19 +1,25 @@
 import React from 'react'
 import "./Nav.css";
+import { Outlet, Link } from "react-router-dom";
+
+
 export const Nav = () => {
   return (
     <div>
        <header class="header">
-        <a href="" class="logo">CSS Nav</a>
+        <Link to='/' class="logo"> Ajirny </Link>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-            <li><a href="#work">Our Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to='/categories'> Categories </Link></li>
+            <li><Link to='/about'> About </Link></li>
+            <li><Link to='/contact'> Contact </Link></li>
+            <li><Link to='/user'> User </Link></li>
+            <li><Link to='/login'> Login </Link></li>
+            <li><Link to='/register'> Register </Link></li>
         </ul>
         </header>
+        <Outlet />
     </div>
   )
 }
