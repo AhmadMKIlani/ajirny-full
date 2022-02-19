@@ -1,9 +1,14 @@
-import Landing from './components/home/Landing';
+
+import SinglePage from './components/singlepage/SinglePage';
+
 function App() {
   return (
+  
     <div className="App">
-      <Landing/>
+      <SinglePage/>
     </div>
+  
+
   );
 }
 
