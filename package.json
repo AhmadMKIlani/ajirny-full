@@ -1,23 +1,9 @@
 {
-  "name": "ajirny-full",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AhmadMKIlani/ajirny-full.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AhmadMKIlani/ajirny-full/issues"
-  },
-  "homepage": "https://github.com/AhmadMKIlani/ajirny-full#readme",
   "dependencies": {
-    "axios": "^0.26.0"
+    "axios": "^0.26.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.3"
   }
 }

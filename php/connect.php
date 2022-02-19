@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: * ");
 
 $servername = "localhost";
 $username = "root";
@@ -11,6 +12,9 @@ $username ,
 $password ,
 $database );
 
+
+$method = $_SERVER['REQUEST_METHOD'];
+
 //check connection
 if ($db) {
    console.log("connect");
@@ -18,7 +22,6 @@ if ($db) {
 } else if ($db->connect_error) {
     die("connection failed:" .$db->connect_error);
     }
-
 
 
 ?>
