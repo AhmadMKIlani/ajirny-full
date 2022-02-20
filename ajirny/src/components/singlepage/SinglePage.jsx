@@ -16,7 +16,7 @@ function SinglePage() {
         setLoading(true)
       })
 
-  })
+  }, [])
   return (<>{
     loading && <section className="restaurant1 top" id="restaurant">
       <div className="singlepage__container flex">

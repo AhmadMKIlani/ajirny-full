@@ -15,8 +15,8 @@ const Footer = () => {
 
                         <div class="contact-social">
                             <ul>
-                                <li><a class="hover-target" href=""><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a class="hover-target" href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a class="hover-target" href="*"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="hover-target" href="*"><i class="fab fa-linkedin-in"></i></a></li>
       
     
                             </ul>

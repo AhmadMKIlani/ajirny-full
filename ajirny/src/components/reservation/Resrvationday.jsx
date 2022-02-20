@@ -31,24 +31,24 @@ console.log(place)
       }}
   return (
     
-    <div class="form-popup" id="myForm">
-      <form action="/action_page.php" class="form-container" onSubmit={saveOrder}>
+    <div className="form-popup reservationDay__form" id="myForm">
+      <form action="/action_page.php" className="form-container" onSubmit={saveOrder}>
         <h1>Contact Place</h1>
     
-        <label for="email"><b>Email</b></label>
+        <label htmlFor="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" value={((JSON.parse(localStorage.getItem('current-user'))).email)?(JSON.parse(localStorage.getItem('current-user'))).email:""} onChange={(e)=>setEmail(e.target.value)} required/>
     
-        <label for="psw"><b>Phone</b></label>
+        <label htmlFor="psw"><b>Phone</b></label>
         <input type="text" placeholder="Enter Phone" name="psw"  onChange={(e)=>setPhone(e.target.value)} required/>
        
 
-       <label for="psw"><b>Numbers of days</b></label>
+        <label htmlFor="psw"><b>Numbers of days</b></label>
         <input type="text" placeholder="Enter Numbers of days" name="psw" onChange={(e)=>setDay(e.target.value)} required/>
     
-        <label for="psw"><b>Date</b></label>
+        <label htmlFor="psw"><b>Date</b></label>
         <input type="date" placeholder="Enter Date" name="psw" onChange={(e)=>setDate(e.target.value)} required/>
     
-        <button type="submit" class="btn">Send</button>
+        <button type="submit" className="btn">Send</button>
       </form>
     </div>
            
