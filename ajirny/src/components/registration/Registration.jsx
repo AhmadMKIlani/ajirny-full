@@ -21,6 +21,7 @@ function Registration() {
             setPasswordError(() => true);
         }
         if (name !== '' && (emailError || passwordError === true)) {
+            console.log();
             setEmailError('');
             setPasswordError('');
             const obj = {
@@ -29,7 +30,7 @@ function Registration() {
                 password: password
             }
             localStorage.setItem('current-user', JSON.stringify(obj));
-            axios.post('http://localhost/php/register.php', obj)
+            axios.post('http://localhost/php/register.php')
                 .then(res => console.log(res.data))
                 .catch(error => {
                     console.log(error.response)
