@@ -54,7 +54,7 @@ const place =location.state;
     
     <div className="form-popup reservationDay__form" id="myForm">
       <form action="/action_page.php" className="form-container" onSubmit={saveOrder}>
-        <h1>Contact Place</h1>
+        <h1>Book Place for days</h1>
     
         <label htmlFor="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" value={((JSON.parse(localStorage.getItem('current-user'))).email)?(JSON.parse(localStorage.getItem('current-user'))).email:""} onChange={(e)=>setEmail(e.target.value)} required/>
