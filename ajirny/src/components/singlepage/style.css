@@ -232,7 +232,7 @@ button {
   padding: 20px;
 }
 
-input {
+/* input {
   width: 100%;
   padding: 15px;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -240,7 +240,7 @@ input {
   background: #263760;
   margin-top: 20px;
   color: white;
-}
+} */
 
 ::placeholder {
   color: white;
