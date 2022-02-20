@@ -17,8 +17,16 @@
         .placecontact__form,
         .reservationHour__form,
         .reservationDay__form {
-            width: 50vw;
-            margin: 25vh auto 0 auto;
+            width: fit-content;
+            margin: 20vh auto 0 auto;
+            padding: 2vh 2vw;
+            border-radius: 10px;
+        }
+        
+        .placecontact__form h1,
+        .reservationHour__form h1,
+        .reservationDay__form h1 {
+            margin-bottom: 5vh;
         }
         /* The popup form - hidden by default */
         
