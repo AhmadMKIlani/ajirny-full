@@ -14,7 +14,7 @@ function Contact() {
       formData.append('email', email)
       formData.append('message', message)
 
-    axios.post('http://localhost/react8/ajirny-full/php/contact.php',formData)
+    axios.post('http://localhost/ajirny-full/php/contact.php',formData)
     .then(res=> console.log(res))
     .catch(error => {
       console.log(error.response)

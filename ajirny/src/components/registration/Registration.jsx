@@ -8,31 +8,36 @@ function Registration() {
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
-
+    
     const regexPassword = /^(?=.*[A-Z])(?=.*[@$!%*#?&])(?=.*[a-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
     const regexEmail = /^[A-ZA-z0-9._-]+@(hotmail|gmail|yahoo|outlook).com$/;
     const navigate = useNavigate();
     const register = (e) => {
         e.preventDefault();
+        let params = new URLSearchParams();
+    
         if (!regexEmail.test(email)) {
             setEmailError(() => true);
         }
         if (!regexPassword.test(password)) {
             setPasswordError(() => true);
         }
-        if (name !== '' && (emailError || passwordError === true)) {
+        if (name !== '' && (emailError || passwordError === false)) {
             setEmailError('');
             setPasswordError('');
+            params.append('name',name);
+            params.append('email',email);
+            params.append('password',password);
             const obj = {
-                name: name,
-                email: email,
-                password: password
+                name: "name",
+                email: "email",
+                password: "password"
             }
             localStorage.setItem('current-user', JSON.stringify(obj));
-            axios.post('http://localhost/reacr8/ajirny-full/php/register.php', obj)
+            axios.post('http://localhost/ajirny-full/php/register.php', params)
                 .then(res => console.log(res.data))
                 .catch(error => {
-                    console.log(error.response)
+                    console.log(error)
                 });
             navigate('/');
         }
@@ -49,7 +54,9 @@ function Registration() {
                     <div className="registration__form--field">
                         <label htmlFor="email">Email</label>
                         <input type="email" id='email' onChange={(e) => setEmail(e.target.value)} value={email} /> <br />
+                        <div>
                         {emailError && <p className='registration__form--error'>Wrong Email Format</p>}
+                        </div>
                     </div>
                     <div className="registration__form--field">
                         <label htmlFor="password">Password</label>

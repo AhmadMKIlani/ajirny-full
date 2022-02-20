@@ -1,14 +1,14 @@
 
-        section {
-            padding: 60px 0;
+        .footer-section {
+            padding:10px 0;
            /* min-height: 100vh;*/
         }
- ul {
+        .footer-section ul {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-.contact-area {
+.contact-area-footer {
     border-bottom: 1px solid #353C46;
     display: flex;
     justify-content: center;
@@ -72,11 +72,12 @@
 }
 
 section, footer {
-    background: #1A1E25;
+    background: #f1f1ed;
     color: #868c96;
 }
 
 footer p {
+    margin-bottom: 0 !important;
     padding: 40px 0;
     text-align: center;
 }

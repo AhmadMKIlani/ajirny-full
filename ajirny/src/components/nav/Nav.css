@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Helvetica, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
   }
   
   a {
@@ -11,11 +11,12 @@ body {
   /* header */
   
   .header {
-    background-color: #fff;
+    background-color: #f1f1ed;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
     z-index: 3;
+    top: 0;
   }
   
   .header ul {
@@ -23,7 +24,7 @@ body {
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #f1f1ed;
   }
   
   .header li a {
@@ -35,7 +36,7 @@ body {
   
   .header li a:hover,
   .header .menu-btn:hover {
-    background-color: #f4f4f4;
+    background-color: #faf9f9;
   }
   
   .header .logo {
