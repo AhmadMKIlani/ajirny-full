@@ -20,11 +20,14 @@ if(!$conn){
 }
 
 
+$catId = $_GET["catid"];
+
 
 switch($method){
 case 'GET' :
-    $sql="SELECT * FROM categories";
+    $sql="SELECT * FROM places INNER JOIN categories ON places.category_id = categories.id Where places.category_id = $catId";
 }
+
 
 $result = mysqli_query($conn,$sql);
 if(!$result){
@@ -41,4 +44,5 @@ if($method == "GET"){
 }
 
 $conn->close();
+
 
