@@ -14,7 +14,7 @@ function Contact() {
       formData.append('email', email)
       formData.append('message', message)
 
-    axios.post('http://localhost/ajirny-full/php/contact.php',formData)
+    axios.post('http://localhost/react8/ajirny-full/php/contact.php',formData)
     .then(res=> console.log(res))
     .catch(error => {
       console.log(error.response)
@@ -35,6 +35,7 @@ function Contact() {
 
   return (
     <div className="container">
+      <div class="contact-bar">
     <div className="content">
       <div className="left-side">
         <div className="address details">
@@ -69,12 +70,13 @@ function Contact() {
         <div className="input-box message-box">
           <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message" name="message" onChange={formValuesHandler} ></textarea>
         </div>
-        <div className="button">
-          <button type="submit" >
+        <div >
+          <button type="subit" className="contact-button" >
           Send Now
           </button>
         </div>
       </form>
+    </div>
     </div>
     </div>
   </div>

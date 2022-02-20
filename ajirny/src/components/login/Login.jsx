@@ -11,7 +11,7 @@ function Login() {
 
     const login = (e) => {
         e.preventDefault();
-        axios.get('http://localhost/php/user.php')
+        axios.get('http://localhost/ajirny-full/php/user.php')
             .then(res => {
                 for (let i = 0; i < res.data.length; i++) {
                     if (res.data[i].email === email && res.data[i].password === password) {

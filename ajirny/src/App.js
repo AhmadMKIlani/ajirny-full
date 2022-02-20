@@ -12,23 +12,30 @@ import {
 } from 'react-router-dom';
 import React from 'react';
 import Category from './components/category/Category';
+import UserProfile from './components/userprofile/UserProfile';
 
 
 function App() {
   return (
-    <Router>
     <div className="App">
-      <Nav/>
-      <Contact/>
+    
+    <Router>
+    <Nav/>
+      
       <Routes>
         <Route path="/" element={<Landing/>}/>
         <Route path="/categories" element={<Category/>}/>
         <Route path="/registration" element={<Registration/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/userprofile" element={<UserProfile/>}/>
       </Routes>
       <Footer/>
-    </div>
+      
+    
     </Router>
+    </div>
   );
 }
 

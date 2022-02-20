@@ -29,7 +29,7 @@ function Registration() {
                 password: password
             }
             localStorage.setItem('current-user', JSON.stringify(obj));
-            axios.post('http://localhost/php/register.php', obj)
+            axios.post('http://localhost/reacr8/ajirny-full/php/register.php', obj)
                 .then(res => console.log(res.data))
                 .catch(error => {
                     console.log(error.response)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import logo from './logo.png'
 import "./Nav.css";
 import { Outlet, Link } from "react-router-dom";
 
@@ -23,7 +23,7 @@ export const Nav = () => {
   return (
     <div>
        <header class="header">
-        <Link to='/' class="logo"> Ajirny </Link>
+        <Link to='/' class="logo"> <img src={logo} /> </Link>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
@@ -35,7 +35,7 @@ export const Nav = () => {
             <li><Link to='/registration'> Register </Link></li></>
             }
             {logout && <>
-            <li><Link to ='/user'>{currentUser}</Link></li>
+            <li><Link to ='/userprofile'>{currentUser}</Link></li>
             <li onClick={handleLogout}><Link to ='/'>logout</Link></li>
             </>}
         </ul>

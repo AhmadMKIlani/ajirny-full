@@ -20,18 +20,17 @@
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  /* margin-top: 150px; */
-  margin-bottom: 100px;
 }
 .container .content{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
-/* .aaa{
+.aaa{
   margin-top: 200px;
-} */
+}
 .container .content .left-side{
   width: 25%;
   height: 100%;
@@ -58,7 +57,7 @@
 }
 .content .left-side .details i{
   font-size: 30px;
-  color: #a98958 !important;
+  color: #3e2093;
   margin-bottom: 10px;
 }
 .content .left-side .details .topic{
@@ -77,12 +76,13 @@
 .content .right-side .topic-text{
   font-size: 23px;
   font-weight: 600;
-  color: #a98958 !important;
+  padding-bottom: 50px;
 }
 .right-side .input-box{
   height: 50px;
   width: 100%;
   margin: 12px 0;
+  background-color: #F0F1F8;
 }
 .right-side .input-box input,
 .right-side .input-box textarea{
@@ -106,19 +106,19 @@
   display: inline-block;
   margin-top: 12px;
 }
-.contact-button{
+/* .right-side .button input[type="button"]{
   color: #fff;
   font-size: 18px;
   outline: none;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background: #a98958;
+  background: #3e2093;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-.contact-button:hover{
-  background: #aa7e3f;
+} */
+.button input[type="button"]:hover{
+  background: #5029bc;
 }
 
 @media (max-width: 950px) {
@@ -155,8 +155,30 @@
  }
 }
 
-/* .contact-button{
-  padding: 5px;
-  background-color:#a98958;
-  border-radius: 20px;
-} */
+.user-image{
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+}
+
+.text-span{
+   padding: 20px;
+   color: #53535a;
+}
+
+.right-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.second-ul{
+    color: #afafb6;
+    margin-bottom: 2rem;
+
+}
+
+.right-bar ul li  {
+    margin-bottom: 2rem;
+}
