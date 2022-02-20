@@ -63,7 +63,8 @@
         /* Set a style for the submit/login button */
         
         .form-container .btn {
-            background-color: #D9B784;
+            margin-top: 5vh;
+            background-color: #D1A056;
             color: black;
             padding: 16px 20px;
             border: none;

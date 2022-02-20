@@ -69,7 +69,7 @@ const place =location.state;
         <input type="date" placeholder="Enter Date" name="psw" onChange={(e) => setToDate((e.target.value).replace(/-0+/g, '-'))} required/>
 
         {dateError && <p className='contact-error'>This time is not avilable, choose another one!</p>}
-        <button type="submit" className="btn">Send</button>
+        <button type="submit" className="btn reservationForm__btn">Book Now</button>
       </form>
     </div>
            
