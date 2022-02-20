@@ -36,9 +36,9 @@ function SinglePage() {
             <h2>Place price : <span>{data[0].price} JOD / 1 Hours</span> </h2>
           </div>
           <div className="singlebutton">
-            <button className="btn btn-primary" ><Link to="/reservationday" state={{ place: data[0].name }}>Book For Days</Link> </button>
-            <button className="btn btn-primary"><Link to="/reservationhour" state={{ place: data[0].name }}>Book For Hours</Link> </button>
-            <button className="btn btn-primary"> <Link to="/reservation" state={{ place: data[0].name }}>Contact For Place</Link>  </button>
+            <button className="btn btn-primary" ><Link className="singlepage__btn" to="/reservationday" state={{ place: data[0].name }}>Book For Days</Link> </button>
+            <button className="btn btn-primary"><Link className="singlepage__btn" to="/reservationhour" state={{ place: data[0].name }}>Book For Hours</Link> </button>
+            <button className="btn btn-primary"> <Link className="singlepage__btn" to="/reservation" state={{ place: data[0].name }}>Contact For Place</Link>  </button>
 
           </div>
         </div>
