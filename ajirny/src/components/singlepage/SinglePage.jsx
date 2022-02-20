@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './style.css';
-
+import { Link } from 'react-router-dom';
 function SinglePage() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
+
+
   useEffect(() => {
-    const url = "http://localhost/php/places.php"
+    const url = "http://localhost/ajirny-full/php/places.php"
     axios.get(url).then(response => response.data)
       .then((data) => {
         setData(data)
@@ -16,41 +18,33 @@ function SinglePage() {
 
   })
   return (<>{
-    loading && <section class="restaurant top" id="restaurant">
-      <div class="container flex">
-
-
-        <div class="left">
-
+    loading && <section className="restaurant1 top" id="restaurant">
+      <div className="singlepage__container flex">
+        <div className="left">
           <img src={data[0].images} alt="" />
         </div>
-        <div class="right">
-          <div class="text">
-            <h2>{data[0].name}</h2>
-
-
+        <div className="right">
+          <div className="singlename">
+            <h2>Places Name : {data[0].name}</h2>
           </div>
-          <div class="accordionWrapper">
-            <div class="accordionItem open">
-              <div class="accordionItemContent">
-                <p>{data[0].description}
-                </p>
-              </div>
-            </div>
-            <div class="accordionItem close">
-              <h2 class="accordionIHeading">{data[0].price}</h2>
-              <div class="accordionItemContent">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </div>
-            </div>
-
+          <div className="singledesc">
+            <h2>Info about the place:</h2>
+            <p>{data[0].description}
+            </p>
+          </div>
+          <div className="singleprice">
+            <h2>Place price : <span>{data[0].price} JOD / 1 Hours</span> </h2>
+          </div>
+          <div className="singlebutton">
+            <button className="btn btn-primary" ><Link to="/reservationday" state={{ place: data[0].name }}>Book For Days</Link> </button>
+            <button className="btn btn-primary"><Link to="/reservationhour" state={{ place: data[0].name }}>Book For Hours</Link> </button>
+            <button className="btn btn-primary"> <Link to="/reservation" state={{ place: data[0].name }}>Contact For Place</Link>  </button>
 
           </div>
         </div>
+
       </div>
     </section>
-
   }
 
   </>

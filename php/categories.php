@@ -20,6 +20,7 @@ if(!$conn){
 }
 
 
+
 switch($method){
 case 'GET' :
     $sql="SELECT * FROM categories";

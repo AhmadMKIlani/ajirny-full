@@ -27,18 +27,18 @@ export const Nav = () => {
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-          <li><Link to='singlepage'>Single Page</Link></li>
-          <li><Link to='/categories'> Categories </Link></li>
-          <li><Link to='/about'> About </Link></li>
-          <li><Link to='/contact'> Contact </Link></li>
-          {!logout &&
-            <><li><Link to='/login'> Login </Link></li>
-              <li><Link to='/registration'> Register </Link></li></>
-          }
-          {logout && <>
-            <li><Link to='/userprofile'>{currentUser}</Link></li>
-            <li onClick={handleLogout}><Link to='/'>logout</Link></li>
-          </>}
+            <li><Link to='/categories'> Categories </Link></li>
+            <li><Link to='/about'> About </Link></li>
+            <li><Link to='/singlepage'> Single </Link></li>
+            <li><Link to='/contact'> Contact </Link></li>
+            { !logout &&
+              <><li><Link to='/login'> Login </Link></li>
+            <li><Link to='/registration'> Register </Link></li></>
+            }
+            {logout && <>
+            <li><Link to ='/userprofile'>{currentUser}</Link></li>
+            <li onClick={handleLogout}><Link to ='/'>logout</Link></li>
+            </>}
         </ul>
       </header>
       <Outlet />
