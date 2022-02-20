@@ -1,5 +1,5 @@
 
-        section {
+      .footersection  {
             padding: 60px 0;
            /* min-height: 100vh;*/
         }
@@ -71,7 +71,7 @@
     max-width: 210px;
 }
 
-section, footer {
+.footersection, footer {
     background: #1A1E25;
     color: #868c96;
 }
