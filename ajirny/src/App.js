@@ -1,5 +1,7 @@
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
+
+import SinglePage from './components/singlepage/SinglePage';
 import Landing from './components/home/Landing';
 import {Nav} from "./components/nav/Nav";
 import Footer from "./components/footer/Footer";
@@ -30,6 +32,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/userprofile" element={<UserProfile/>}/>
+   
       </Routes>
       <Footer/>
       
