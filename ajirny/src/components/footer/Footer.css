@@ -1,14 +1,19 @@
 
+<<<<<<< HEAD
       .footersection  {
             padding: 60px 0;
+=======
+        .footer-section {
+            padding:10px 0;
+>>>>>>> 0f1602726a7eaee52a7f9ba0b5a9cd4cfa74787a
            /* min-height: 100vh;*/
         }
- ul {
+        .footer-section ul {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-.contact-area {
+.contact-area-footer {
     border-bottom: 1px solid #353C46;
     display: flex;
     justify-content: center;
@@ -77,6 +82,7 @@
 }
 
 footer p {
+    margin-bottom: 0 !important;
     padding: 40px 0;
     text-align: center;
 }
