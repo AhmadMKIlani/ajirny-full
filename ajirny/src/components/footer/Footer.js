@@ -1,10 +1,14 @@
 import React from 'react'
 import "./Footer.css";
+import logo from './logo.png'
+
+
+
 const Footer = () => {
   return (
     <div>
-        <section class="contact-area" id="contact">
-        <div class="container">
+        <section class="contact-area footer-section " id="contact">
+        <div class="footer-container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="contact-content text-center">
@@ -24,7 +28,7 @@ const Footer = () => {
     </section>
     
     <footer>
-        <p>Copyright &copy; 2019 <img src="https://i.ibb.co/QDy827D/ak-logo.png" alt="logo"/> All Rights Reserved.</p>
+        <p><img src={logo} alt="logo"/>Copyright &copy; 2019All Rights Reserved.</p>
     </footer>
     </div>
   )
