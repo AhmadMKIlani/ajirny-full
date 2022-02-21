@@ -4,14 +4,14 @@ body {
     background-color: #ffffff;
   }
   
-  a {
-    color: #000;
+  .header-link{
+    color: #f9edca;
   }
   
   /* header */
   
   .header {
-    background-color: #f9edca;
+    background-color: #a98958;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
@@ -24,7 +24,7 @@ body {
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: #f1f1ed;
+    background-color: #a98958;
   }
   
   .header li a {
@@ -51,7 +51,7 @@ body {
   /* menu */
   
   .header .menu {
-    background-color: #f9edca;
+    background-color: #a98958;
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;

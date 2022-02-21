@@ -57,6 +57,13 @@
 
 .cat-text{
   text-align: center;
+  color: #a98958;
+}
+
+.category-head-h5{
+text-align: center;
+margin: 100px 0px 50px 0px;
+color: #a98958;
 }
 @media(max-width :1024px ){
     .box {

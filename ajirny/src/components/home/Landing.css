@@ -1,5 +1,5 @@
 .main-background{
-    background: url(./chairs-g5edc6d380_1920.jpg);
+    background: url(./meeting.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,14 +12,14 @@
 }
 .main-text{
     text-align: center;
-    padding-bottom: 150px;
+    padding-bottom: 307px;
 }
 .main-text h2{
-    color: rgb(70, 70, 70);
+    color: #f9edca;
     font-size: 30px;
 }
 .main-text h1{
-    color: rgb(70, 70, 70);
+    color: #a98958;
     font-size: 38px;
 }
 .main-text h1 span{
