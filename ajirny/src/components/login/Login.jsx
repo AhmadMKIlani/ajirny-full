@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -46,8 +47,10 @@ function Login() {
                         <label htmlFor="password">Password</label>
                         <input type="password" id='password' onChange={(e) => setPassword(e.target.value)} value={password} /> <br />
                     </div>
+                    <br />
                     <button type='submit' className='login__formBtn'>Login</button>
                 </form>
+                    <Link to= '/registration'>Do not have an Account</Link>
             </div>
         </div>
     )
