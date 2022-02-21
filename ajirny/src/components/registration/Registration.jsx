@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Registration.css';
 import axios from 'axios';
+import swal from 'sweetalert';
+
+
 function Registration() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -39,8 +42,16 @@ function Registration() {
                 .catch(error => {
                     console.log(error)
                 });
+                
             navigate('/');
+            window.location.reload(true);
+
         }
+        swal({
+            title: "Registered Successfully!",
+            text: "Welcome!",
+            icon: "success",
+          });
         window.location.reload();
     }
     return (
