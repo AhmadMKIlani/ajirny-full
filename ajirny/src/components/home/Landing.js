@@ -12,8 +12,14 @@ const Landing = () => {
     <>
     <div class="main-background">
         <div class="main-text">
-            <h2>perfection</h2>
-        <h1>and you are <span>invited</span></h1>
+            <div className='landing__layout'>
+            <h2>Perfection</h2>
+            <h1>And you are <span>invited</span></h1>
+            <div className='landing__buttons'>
+              <button>Book Place for days</button>
+              <button>Contact us for meeting</button>
+            </div>
+            </div>
         </div>
     </div>
     <Category/>

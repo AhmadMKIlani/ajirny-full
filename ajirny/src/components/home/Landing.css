@@ -1,4 +1,4 @@
-.main-background{
+.main-background {
     background: url(./meeting.jpg);
     background-size: cover;
     background-position: center;
@@ -8,54 +8,61 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   
 }
-.main-text{
+
+.main-text {
     text-align: center;
     padding-bottom: 307px;
 }
-.main-text h2{
+
+.main-text h2 {
     color: #f9edca;
     font-size: 30px;
 }
-.main-text h1{
+
+.main-text h1 {
     color: #a98958;
     font-size: 38px;
 }
-.main-text h1 span{
+
+.main-text h1 span {
     color: var(--maincolor);
-} 
-.book-section{
+}
+
+.book-section {
     padding: 2rem 7%;
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.inner-book{
+
+.inner-book {
     width: 100%;
     background: black;
     display: flex;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 2rem;
 }
-.inner-book input{
+
+.inner-book input {
     padding: 1rem 2rem;
     margin: .5rem 0;
-
 }
-.book-btn{
+
+.book-btn {
     padding: 1.1rem 2rem;
     background: var(--maincolor);
-
 }
-.book-btn a{
+
+.book-btn a {
     color: white;
     font-size: 1.5rem;
 }
-.main-hotel{
+
+.main-hotel {
     padding: 2rem 7%;
     display: flex;
     justify-content: center;
@@ -63,31 +70,65 @@
     flex-wrap: wrap;
     gap: 15px;
 }
-.award-winning-hotel h1{
+
+.award-winning-hotel h1 {
     color: black;
     font-size: 40px;
     text-align: center;
-    padding: 2rem ;
+    padding: 2rem;
 }
-.award-winning-hotel h1 span{
+
+.award-winning-hotel h1 span {
     color: var(--maincolor);
 }
-.inner-award{
+
+.inner-award {
     flex: 1 1 300px;
 }
-.inner-award h2,p{
+
+.inner-award h2,
+p {
     text-align: center;
 }
-.inner-award h2{
+
+.inner-award h2 {
     font-size: 30px;
     padding: 1rem;
 }
-.inner-award p{
+
+.inner-award p {
     font-size: 1.7rem;
     padding: 2rem;
 }
-.inner-award img{
+
+.inner-award img {
     width: 100%;
 }
 
 
+/* sahar */
+
+.landing__layout {
+    margin-top: 35vh;
+    width: 60vw;
+    height: fit-content;
+    padding-top: 5vh;
+    background-color: rgba(27, 25, 25, 0.836);
+    border-radius: 20px;
+}
+
+.landing__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.landing__buttons button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #000;
+    background-color: #C9AD82;
+    margin: 0 2vw 5vh 2vw;
+    border: none;
+}
