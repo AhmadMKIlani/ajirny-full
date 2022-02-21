@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import { Outlet, Link } from "react-router-dom";
-
+import './Category.css'
 const Category = () => {
 
     const [loading, setLoading] = useState(true);
@@ -49,6 +49,7 @@ const Category = () => {
             subCat(category.id, category.name)
             }
             >
+            <h5 className='cat-text'>{category.name}</h5>
             <img src={category.image} alt={category.name}/>
             </Link>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.png'
 import "./Nav.css";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 
 export const Nav = () => {
@@ -22,22 +22,22 @@ export const Nav = () => {
   }
   return (
     <div>
-      <header class="header">
-        <Link to='/' class="logo"> <img src={logo} /> </Link>
+       <header class="header">
+        <NavLink to='/' class="logo"> <img src={logo} /> </NavLink>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-            <li><Link to='/categories'> Categories </Link></li>
-            <li><Link to='/about'> About </Link></li>
-            <li><Link to='/singlepage'> Single </Link></li>
-            <li><Link to='/contact'> Contact </Link></li>
+            <li><NavLink to='/categories'> Categories </NavLink></li>
+            <li><NavLink to='/about'> About </NavLink></li>
+            <li><NavLink to='/singlepage'> Single </NavLink></li>
+            <li><NavLink to='/contact'> Contact </NavLink></li>
             { !logout &&
-              <><li><Link to='/login'> Login </Link></li>
-            <li><Link to='/registration'> Register </Link></li></>
+              <><li><NavLink to='/login'> Login </NavLink></li>
+            <li><NavLink to='/registration'> Register </NavLink></li></>
             }
             {logout && <>
-            <li><Link to ='/userprofile'>{currentUser}</Link></li>
-            <li onClick={handleLogout}><Link to ='/'>logout</Link></li>
+            <li><NavLink to ='/userprofile'>{currentUser}</NavLink></li>
+            <li onClick={handleLogout}><NavLink to ='/'>logout</NavLink></li>
             </>}
         </ul>
       </header>
