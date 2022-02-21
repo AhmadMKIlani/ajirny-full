@@ -62,7 +62,7 @@ function Reservation() {
         <input type="date" placeholder="Enter Date" name="psw" onChange={(e) => setDate(e.target.value)} min={currentDate} required />
 
         {dateError && <p className='contact-error'>This time is not avilable, choose another one!</p>}
-        <button type="submit" className="btn">Send</button>
+        <button type="submit" className="btn">Contact</button>
         {/* <Link to= '/single'>Send</Link> */}
       </form>
     </div>
