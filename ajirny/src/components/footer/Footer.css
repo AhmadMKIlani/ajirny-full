@@ -63,6 +63,10 @@
     width: 40px;
 }
 
+.footer-li{
+    list-style: none;
+}
+
 .contact-social ul li a:hover {
     border: 1px solid #FAB702;
     color: #FAB702;
@@ -72,9 +76,8 @@
     max-width: 210px;
 }
 
-.footersection,
-footer {
-    background: #1A1E25;
+section, footer {
+    background: #f9edca;;
     color: #868c96;
 }
 
