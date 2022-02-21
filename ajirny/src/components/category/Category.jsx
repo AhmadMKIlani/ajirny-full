@@ -1,8 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
-import "./Category.css";
 import { Outlet, Link } from "react-router-dom";
-
+import './Category.css'
 const Category = () => {
 
     const [loading, setLoading] = useState(true);
@@ -44,6 +43,7 @@ const Category = () => {
 
         
         <div className="box zone">
+        <h2 className='cat-text'>{category.name}</h2>
             <Link to="/singleCat" className='cat-link'
             onClick={(id, name) =>
             subCat(category.id, category.name)

@@ -11,7 +11,7 @@ body {
   /* header */
   
   .header {
-    background-color: #f1f1ed;
+    background-color: #f9edca;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
@@ -51,6 +51,7 @@ body {
   /* menu */
   
   .header .menu {
+    background-color: #f9edca;
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;

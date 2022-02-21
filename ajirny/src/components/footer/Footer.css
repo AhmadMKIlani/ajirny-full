@@ -1,13 +1,14 @@
+.footer-section {
+    padding: 10px 0;
+    /* min-height: 100vh;*/
+}
 
-        .footer-section {
-            padding:10px 0;
-           /* min-height: 100vh;*/
-        }
-        .footer-section ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .contact-area-footer {
     border-bottom: 1px solid #353C46;
     display: flex;
@@ -47,7 +48,7 @@
     margin-top: 30px;
 }
 
-.contact-social > ul {
+.contact-social>ul {
     display: inline-flex;
 }
 
@@ -71,8 +72,9 @@
     max-width: 210px;
 }
 
-section, footer {
-    background: #f1f1ed;
+.footersection,
+footer {
+    background: #1A1E25;
     color: #868c96;
 }
 

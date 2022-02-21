@@ -8,15 +8,15 @@ export const Nav = () => {
   const [currentUser, setCurrentUser] = useState('');
   const [logout, setLogout] = useState(false);
 
-  useEffect(()=>{
-    if (JSON.parse(localStorage.getItem('current-user'))){
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('current-user'))) {
       setLogout(true);
-      setCurrentUser(()=>JSON.parse(localStorage.getItem('current-user'))['name']);
-    }else{
+      setCurrentUser(() => JSON.parse(localStorage.getItem('current-user'))['name']);
+    } else {
       setLogout(false);
     }
   }, [])
-  const handleLogout =()=>{
+  const handleLogout = () => {
     localStorage.removeItem('current-user');
     setLogout(false);
   }
@@ -40,8 +40,8 @@ export const Nav = () => {
             <li onClick={handleLogout}><NavLink to ='/'>logout</NavLink></li>
             </>}
         </ul>
-        </header>
-        <Outlet />
+      </header>
+      <Outlet />
     </div>
   )
 }
