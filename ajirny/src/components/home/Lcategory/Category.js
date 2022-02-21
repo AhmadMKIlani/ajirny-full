@@ -37,7 +37,7 @@ const Category = () => {
         
         <div className="box zone">
             <a href="index.html" className='cat-link'>
-            <h2 className='cat-text'>{category.name}</h2>
+            <h5 className='cat-text'>{category.name}</h5>
             <img src={category.image} alt={category.name}/>
             </a>
         </div>
