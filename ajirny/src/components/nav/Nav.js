@@ -27,6 +27,7 @@ export const Nav = () => {
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
+            <li><NavLink to='/' className="header-link" > Home </NavLink></li>
             <li><NavLink to='/categories' className="header-link" > Categories </NavLink></li>
             <li><NavLink to='/about' className="header-link"> About </NavLink></li>
             <li><NavLink to='/single' className="header-link"> Single </NavLink></li>
