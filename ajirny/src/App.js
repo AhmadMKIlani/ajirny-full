@@ -36,7 +36,7 @@ function App() {
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/userprofile" element={<UserProfile/>}/>
-        <Route path="/singlepage" element={<SinglePage/>}/>
+        {/* <Route path="/singlepage" element={<SinglePage/>}/> */}
    
         <Route path="/single" element={<SinglePage/>}/>
         <Route path="/reservation" element={<PlaceContact/>}/>

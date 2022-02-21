@@ -20,7 +20,6 @@ function About() {
              </div>
           </div>
           <h3>Haneen Al-ayasrah</h3>
-          <span>Full-Stack</span>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
         </div>
         <div class="team_member">
@@ -33,7 +32,6 @@ function About() {
              </div>
           </div>
           <h3>Ahmad Kilani</h3>
-          <span>Full-Stack</span>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores maiores temporibus, architecto optio asperiores mollitia pariatur error, quaerat voluptatibus minima eos quo nostrum, maxime necessitatibus.</p>
       </div>
         <div class="team_member">
@@ -46,7 +44,6 @@ function About() {
              </div>
           </div>
           <h3>Sahar Zahran</h3>
-          <span> Full-Stack </span>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
       </div>
         <div class="team_member">
@@ -59,7 +56,6 @@ function About() {
              </div>
           </div>
           <h3> Nermeen Alahmad </h3>
-          <span>Full-Stack</span>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perspiciatis, error deleniti quaerat beatae doloribus incidunt excepturi. Fugit deleniti accusantium neque hic quidem voluptatibus cumque.</p>
       </div>  
     </div>

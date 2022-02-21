@@ -29,9 +29,9 @@ function Registration() {
             params.append('email',email);
             params.append('password',password);
             const obj = {
-                name: "name",
-                email: "email",
-                password: "password"
+                name: name,
+                email: email,
+                password: password
             }
             localStorage.setItem('current-user', JSON.stringify(obj));
             axios.post('http://localhost/ajirny-full/php/register.php', params)

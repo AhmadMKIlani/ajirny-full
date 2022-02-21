@@ -20,7 +20,8 @@
   font-family: 'Yatra One', cursive;
   font-size: 48px;
   color: #a98958;
-  margin-top: 70px;
+  margin-top: 90px;
+  text-align: center;
 }
 
 .our_team{
@@ -68,16 +69,19 @@
   line-height: 18px;
   letter-spacing: 2px;
   margin: 15px 0 0px;
+  text-align: center;
 }
 
 .our_team .team_member span{
   font-size: 10px;
+  text-align: center;
 }
 
 .our_team .team_member p{
   margin-top: 20px;
   font-size: 14px;
   line-height: 20px;
+  text-align: center;
 }
 
 .our_team .team_member .member_img .social_media{

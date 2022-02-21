@@ -4,8 +4,11 @@ import './contact.css'
 import axios from 'axios';
 
 function Contact() {
-
-    const [ {name, email, message} , setContact ] = useState ({name : "" , email:"" , message: ""})
+    const username = ((JSON.parse(localStorage.getItem("current-user"))).name) ? (JSON.parse(localStorage.getItem("current-user"))).name : " " ;
+    const useremail = ((JSON.parse(localStorage.getItem("current-user"))).email) ? (JSON.parse(localStorage.getItem("current-user"))).email : " ";
+    console.log(username)
+    console.log(useremail)
+    const [ {name, email, message} , setContact ] = useState ({ name : username , email: useremail , message: "" })
 
      const onSubmit = (e) => {
      e.preventDefault();
@@ -62,10 +65,10 @@ function Contact() {
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
       <form action="#"  onClick={onSubmit} >
         <div className="input-box">
-          <input type="text" placeholder="Enter your name" name="name" onChange={formValuesHandler} />
+          <input type="text" placeholder="Enter your name" value={((JSON.parse(localStorage.getItem("current-user"))).name) ? (JSON.parse(localStorage.getItem("current-user"))).name : " " } name="name" onChange={formValuesHandler} />
         </div>
         <div className="input-box">
-          <input type="text" placeholder="Enter your email" name="email" onChange={formValuesHandler} />
+          <input type="text" placeholder="Enter your email" value={((JSON.parse(localStorage.getItem("current-user"))).email) ? (JSON.parse(localStorage.getItem("current-user"))).email : " " } name="email" onChange={formValuesHandler} />
         </div>
         <div className="input-box message-box">
           <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message" name="message" onChange={formValuesHandler} ></textarea>
