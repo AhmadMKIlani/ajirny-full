@@ -8,7 +8,6 @@ import Registration from './components/registration/Registration';
 import Login from './components/login/Login';
 import PlaceContact from './components/reservation/PlaceContact';
 import Reservationday from './components/reservation/Resrvationday';
-import ReservationHour from './components/reservation/Reservationhour';
 import {
   BrowserRouter as Router,
   Routes,
@@ -40,7 +39,6 @@ function App() {
    
         <Route path="/single" element={<SinglePage/>}/>
         <Route path="/reservation" element={<PlaceContact/>}/>
-        <Route path="/reservationhour" element={<ReservationHour/>}/>
         <Route path="/reservationday" element={<Reservationday/>}/>
 
 

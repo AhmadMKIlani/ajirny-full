@@ -27,10 +27,10 @@ export const Nav = () => {
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-            <li><NavLink to='/categories'> Categories </NavLink></li>
-            <li><NavLink to='/about'> About </NavLink></li>
-            <li><NavLink to='/single'> Single </NavLink></li>
-            <li><NavLink to='/contact'> Contact </NavLink></li>
+            <li><NavLink to='/categories' className="header-link" > Categories </NavLink></li>
+            <li><NavLink to='/about' className="header-link"> About </NavLink></li>
+            <li><NavLink to='/single' className="header-link"> Single </NavLink></li>
+            <li><NavLink to='/contact' className="header-link"> Contact </NavLink></li>
             { !logout &&
               <><li><NavLink to='/login'> Login </NavLink></li>
             <li><NavLink to='/registration'> Register </NavLink></li></>
