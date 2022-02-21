@@ -52,17 +52,18 @@ function Registration() {
                         <input type="text" id='name' onChange={(e) => setName(e.target.value)} value={name} />
                     </div>
                     <div className="registration__form--field">
-                        <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Email</label>
+
                         <input type="email" id='email' onChange={(e) => setEmail(e.target.value)} value={email} /> <br />
-                        <div>
-                        {emailError && <p className='registration__form--error'>Wrong Email Format</p>}
-                        </div>
+                       
                     </div>
+                    {emailError && <p className='registration__form--error par'>Wrong Email Format</p>}
                     <div className="registration__form--field">
                         <label htmlFor="password">Password</label>
                         <input type="password" id='password' onChange={(e) => setPassword(e.target.value)} value={password} /> <br />
-                        {passwordError && <p className='registration__form--error'>Should be 8 characters(capital, small, numbers and special characters)</p>}
                     </div>
+                    {passwordError && <p className='registration__form--error par'>Should be 8 characters</p>}
+
                     <button type='submit' className='registration__formBtn'>Sign up</button>
                 </form>
             </div>
