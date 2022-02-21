@@ -20,7 +20,7 @@ const Landing = () => {
                 {(JSON.parse(localStorage.getItem('current-user')) ? <Link to='/categories'>Book your place now!</Link> : <Link to='/login'>Book your place</Link>)}
                 </button>
               <button>
-                {(JSON.parse(localStorage.getItem('current-user')) ? <Link to='/categories'>Contact us for a place</Link> : <Link to='/login'>Contact us for a place</Link>)}
+                {(JSON.parse(localStorage.getItem('current-user')) ? <Link to='/contact'>Contact us for a place</Link> : <Link to='/login'>Contact us for a place</Link>)}
               </button>
             </div>
             </div>

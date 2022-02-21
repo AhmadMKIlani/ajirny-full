@@ -43,17 +43,18 @@ function Registration() {
                 .catch(error => {
                     console.log(error)
                 });
+                swal({
+                    title: "Registered Successfully!",
+                    text: "Welcome!",
+                    icon: "success",
+                    button:"ok"
+                  });
                 
             navigate('/');
             window.location.reload(true);
 
         }
-        swal({
-            title: "Registered Successfully!",
-            text: "Welcome!",
-            icon: "success",
-          });
-        window.location.reload();
+        
     }
     return (
         <div className='registration'>

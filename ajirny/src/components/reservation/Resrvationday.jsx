@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
-import './style.css'
-import {useLocation} from 'react-router-dom'
+import React, {useState} from 'react';
+import './style.css';
+import {useLocation} from 'react-router-dom';
+import swal from 'sweetalert';
+
 function Reservationday() {
 const currentUser = JSON.parse(localStorage.getItem('current-user'));
 const [email ,setEmail] = useState(()=>{ 
@@ -34,6 +36,12 @@ const days = [];
       const orders=JSON.parse(localStorage.getItem('orders'));
       if (orders == null) {
         localStorage.setItem('orders', JSON.stringify([order]))
+        swal({
+          title: "Registered Successfully!",
+          text: "Welcome!",
+          icon: "success",
+          button:"ok"
+        });
       }
       else {
         const filterorder = orders.filter(order => order.place === place.place);
@@ -46,6 +54,12 @@ const days = [];
             }
             filterorder.map(() => ((!days.includes(fromDate) && !days.includes(toDate)) ? localStorage.setItem('orders', JSON.stringify([...orders, order])):showError() 
             ))
+            swal({
+              title: "Registered Successfully!",
+              text: "Welcome!",
+              icon: "success",
+              button:"ok"
+            });
           });
         }
       }
