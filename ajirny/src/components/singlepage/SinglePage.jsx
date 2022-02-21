@@ -6,38 +6,46 @@ import { Link } from 'react-router-dom';
 function SinglePage() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
+  const [placeId, setPlaceId] = useState(localStorage.getItem("placeId"));
 
 
   useEffect(() => {
-    const url = "http://localhost/ajirny-full/php/places.php"
-    axios.get(url).then(response => response.data)
-      .then((data) => {
-        setData(data)
-        setLoading(true)
-      })
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        if (placeId !== 0) {
+          const { data: response } = await axios.get(`http://localhost/ajirny-full/php/places.php?placeId=${placeId}`);
+          setData(response[0]);
+          console.log(response[0]);
+        }
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    fetchData();
+  }, []);
 
-  }, [])
   return (<>{
     loading && <section className="restaurant1 top" id="restaurant">
       <div className="singlepage__container flex">
         <div className="left">
-          <img src={data[0].images} alt="" />
+          <img src={data.images} alt="place for rent" />
         </div>
         <div className="right">
           <div className="singlename">
-            <h2>Places Name : {data[0].name}</h2>
+            <h2>Places Name : {data.name}</h2>
           </div>
           <div className="singledesc">
             <h2>Info about the place:</h2>
-            <p>{data[0].description}
+            <p>{data.description}
             </p>
           </div>
           <div className="singleprice">
-            <h2>Place price : <span>{data[0].price} JOD / 1 Hours</span> </h2>
+            <h2>Place price : <span>{data.price} JOD / 1 Hours</span> </h2>
           </div>
           <div className="singlebutton">
-            <button className="btn btn-primary" ><Link className="singlepage__btn" to="/reservationday" state={{ place: data[0].name }}>Book For Days</Link> </button>
-            <button className="btn btn-primary"> <Link className="singlepage__btn" to="/reservation" state={{ place: data[0].name }}>Contact For Place</Link>  </button>
+            <button className="btn btn-primary" ><Link className="singlepage__btn" to="/reservationday" state={{ place: data.name }}>Book For Days</Link> </button>
+            <button className="btn btn-primary"> <Link className="singlepage__btn" to="/reservation" state={{ place: data.name }}>Contact For Place</Link>  </button>
           </div>
         </div>
 

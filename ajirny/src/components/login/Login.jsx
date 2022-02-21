@@ -13,11 +13,14 @@ function Login() {
         e.preventDefault();
         axios.get('http://localhost/ajirny-full/php/user.php')
             .then(res => {
+                console.log(res);
                 for (let i = 0; i < res.data.length; i++) {
                     if (res.data[i].email === email && res.data[i].password === password) {
                         setCurrentUser(res.data[i].name);
                         localStorage.setItem('current-user', JSON.stringify(res.data[i]));
                         setInputError(false);
+                        navigate('/');
+                        window.location.reload(true);
                         break;
                     } else {
                         setInputError(true);
@@ -27,8 +30,6 @@ function Login() {
             .catch(error => {
                 console.log(error.response)
             });
-            navigate('/');
-        window.location.reload(true);
     }
     return (
         <div className='login'>
