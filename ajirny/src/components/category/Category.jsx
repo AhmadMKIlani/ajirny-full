@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
-import "./Category.css";
 import { Outlet, Link } from "react-router-dom";
 
 const Category = () => {
@@ -44,12 +43,12 @@ const Category = () => {
 
         
         <div className="box zone">
+        <h2 className='cat-text'>{category.name}</h2>
             <Link to="/singleCat" className='cat-link'
             onClick={(id, name) =>
             subCat(category.id, category.name)
             }
             >
-            <h2 className='cat-text'>{category.name}</h2>
             <img src={category.image} alt={category.name}/>
             </Link>
         </div>

@@ -47,12 +47,12 @@
 
 .cat-link{
     display: flex;
-    position: relative;
+   
     height: 100%;
 }
 
 .cat-text{
-    position: absolute;
+   
     bottom: 35%;
     right: 35%;
 }
