@@ -2,7 +2,14 @@ import React, {useState} from 'react'
 import './style.css'
 import {useLocation} from 'react-router-dom'
 function Reservationday() {
-const [email ,setEmail] = useState("")
+const currentUser = JSON.parse(localStorage.getItem('current-user'));
+const [email ,setEmail] = useState(()=>{ 
+  if(currentUser){
+  return currentUser.email;
+  }else{
+    return '';
+  } 
+ })
 const [phone ,setPhone]  = useState("")
 const [fromDate ,setFromDate] = useState("")
 const [toDate ,setToDate] =useState("")
@@ -57,7 +64,7 @@ const days = [];
         <h1>Book Place for days</h1>
     
         <label htmlFor="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" value={((JSON.parse(localStorage.getItem('current-user'))).email)?(JSON.parse(localStorage.getItem('current-user'))).email:""} onChange={(e)=>setEmail(e.target.value)} required/>
+        <input type="text" placeholder="Enter Email" name="email" value={email} required/>
     
         <label htmlFor="psw"><b>Phone</b></label>
         <input type="text" placeholder="Enter Phone" name="psw"  onChange={(e)=>setPhone(e.target.value)} required/>

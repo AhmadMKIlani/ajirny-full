@@ -5,6 +5,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 
+import { Link } from 'react-router-dom';
 function Registration() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -78,6 +79,8 @@ function Registration() {
 
                     <button type='submit' className='registration__formBtn'>Sign up</button>
                 </form>
+                <Link to='/login'>Already have an Account</Link>
+
             </div>
         </div>
     )
