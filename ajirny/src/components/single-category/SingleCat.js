@@ -38,26 +38,31 @@ const SingleCat = () => {
   return (
 
     <div>
-
-      <div className=" blue grid-wrapper">
+      <h2 className='category-head-h5'> Categoriors </h2>
+      <div className="grid-wrapper">
 
         {loading && <div>Loading</div>}
         {!loading && (
 
           <>
             {places.map(place => (<>
-              <Link to='/single' onClick={() => storePlace(place.place_id)}>
-                <h2 className='cat-text'>{places[0].name}</h2>
-                <div className="box zone">
-                    <h2 className='cat-text'>{place.place_name}</h2>
-                    <img src={place.place-image} alt={place.name} />
-                </div>
+              
+              <div className="box zone">
+              <Link to='/single' className='cat-link' onClick={() => storePlace(place.place_id)}>
+                {/* <h2 className='cat-text'>{places[0].name}</h2> */}
+        
+                    <h5 className='cat-text'>{place.place_name}</h5>
+                    <img src={place.place_image} alt={place.name} />
+                
               </Link>
+              </div>
             </>))}
+            
           </>
         )}
-
+        
       </div>
+      
     </div>
 
 

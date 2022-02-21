@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Registration.css';
 import axios from 'axios';
+import swal from 'sweetalert';
+
+
+import { Link } from 'react-router-dom';
 function Registration() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -39,10 +43,17 @@ function Registration() {
                 .catch(error => {
                     console.log(error)
                 });
+                
             navigate('/');
             window.location.reload(true);
 
         }
+        swal({
+            title: "Registered Successfully!",
+            text: "Welcome!",
+            icon: "success",
+          });
+        window.location.reload();
     }
     return (
         <div className='registration'>
@@ -55,9 +66,7 @@ function Registration() {
                     </div>
                     <div className="registration__form--field">
                     <label htmlFor="email">Email</label>
-
                         <input type="email" id='email' onChange={(e) => setEmail(e.target.value)} value={email} /> <br />
-                       
                     </div>
                     {emailError && <p className='registration__form--error par'>Wrong Email Format</p>}
                     <div className="registration__form--field">
@@ -65,9 +74,9 @@ function Registration() {
                         <input type="password" id='password' onChange={(e) => setPassword(e.target.value)} value={password} /> <br />
                     </div>
                     {passwordError && <p className='registration__form--error par'>Should be 8 characters</p>}
-
                     <button type='submit' className='registration__formBtn'>Sign up</button>
                 </form>
+                <Link to='/login'>Already have an Account</Link>
             </div>
         </div>
     )

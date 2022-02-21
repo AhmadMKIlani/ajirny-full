@@ -30,7 +30,7 @@ export const Nav = () => {
             <li><NavLink to='/' className="header-link" > Home </NavLink></li>
             <li><NavLink to='/categories' className="header-link" > Categories </NavLink></li>
             <li><NavLink to='/about' className="header-link"> About </NavLink></li>
-            <li><NavLink to='/single' className="header-link"> Single </NavLink></li>
+            {/* <li><NavLink to='/single' className="header-link"> Single </NavLink></li> */}
             <li>
             {(JSON.parse(localStorage.getItem('current-user')) ? <NavLink to='/contact' className="header-link"> Contact </NavLink> : <Link to='/login'>Contact</Link>)}
               </li>
@@ -40,7 +40,7 @@ export const Nav = () => {
             }
             {logout && <>
             <li><NavLink to ='/userprofile'>{currentUser}</NavLink></li>
-            <li onClick={handleLogout}><NavLink to ='/'>logout</NavLink></li>
+            <li onClick={handleLogout}><NavLink className='logout-a' to ='/'>logout</NavLink></li>
             </>}
         </ul>
       </header>

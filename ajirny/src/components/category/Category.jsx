@@ -33,7 +33,8 @@ const Category = () => {
   return (
 
   <div>
-    <div className=" blue grid-wrapper">
+    <h2 className='category-head-h5'>Categories</h2>
+    <div className="grid-wrapper">
 
     {loading && <div>Loading</div>}
     {!loading && (

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: center;
+    margin-bottom: 120px;
 }
 
 .box {

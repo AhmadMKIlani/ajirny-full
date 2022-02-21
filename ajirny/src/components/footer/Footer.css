@@ -85,6 +85,11 @@ footer p {
     margin-bottom: 0 !important;
     padding: 40px 0;
     text-align: center;
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+    background-color: #c9ad82;
+    color: #816615;
 }
 
 footer img {

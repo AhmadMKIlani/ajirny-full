@@ -32,7 +32,7 @@ body {
     padding: 20px 20px;
     border-right: 1px solid #f4f4f4;
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: 500;
   }
   
   .header li a:hover,
@@ -124,6 +124,10 @@ body {
   .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
   .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
+  }
+
+  .logout-a{
+    color: red;
   }
   
   /* .active{

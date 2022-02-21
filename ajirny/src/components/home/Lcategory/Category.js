@@ -1,7 +1,9 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import { Outlet, Link } from "react-router-dom";
-import './Category.css'
+import './Category.css';
+
+
 const Category = () => {
 
     const [loading, setLoading] = useState(true);
@@ -34,7 +36,7 @@ const Category = () => {
 
   <div>
     <h2 className='category-head-h5'>Categories</h2>
-    <div className=" grid-wrapper">
+    <div className="grid-wrapper">
 
     {loading && <div>Loading</div>}
     {!loading && (

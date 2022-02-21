@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './contact.css'
-// import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -8,8 +7,6 @@ import { useNavigate } from 'react-router-dom';
 function Contact() {
     const username = ((JSON.parse(localStorage.getItem("current-user"))).name) ? (JSON.parse(localStorage.getItem("current-user"))).name : " " ;
     const useremail = ((JSON.parse(localStorage.getItem("current-user"))).email) ? (JSON.parse(localStorage.getItem("current-user"))).email : " ";
-    console.log(username)
-    console.log(useremail)
     const [ {name, email, message} , setContact ] = useState ({ name : username , email: useremail , message: "" })
 
      const onSubmit = (e) => {
@@ -34,14 +31,6 @@ function Contact() {
          )
         } )
       }
-
-    // const navigate = useNavigate();
-    // useEffect(()=>{
-    //   if(!JSON.parse(localStorage.getItem('current-user'))){
-    //     navigate('/login');
-    //   }
-    // })  
-
   return (
     <div className="container">
       <div class="contact-bar">
