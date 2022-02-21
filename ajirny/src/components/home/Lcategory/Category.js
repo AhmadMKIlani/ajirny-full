@@ -1,7 +1,9 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import { Outlet, Link } from "react-router-dom";
-import './Category.css'
+import './Category.css';
+
+
 const Category = () => {
 
     const [loading, setLoading] = useState(true);

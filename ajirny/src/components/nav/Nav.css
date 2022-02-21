@@ -125,6 +125,10 @@ body {
   .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
   }
+
+  .logout-a{
+    color: red;
+  }
   
   /* .active{
     color:#A98958;

@@ -40,7 +40,7 @@ export const Nav = () => {
             }
             {logout && <>
             <li><NavLink to ='/userprofile'>{currentUser}</NavLink></li>
-            <li onClick={handleLogout}><NavLink to ='/'>logout</NavLink></li>
+            <li onClick={handleLogout}><NavLink className='logout-a' to ='/'>logout</NavLink></li>
             </>}
         </ul>
       </header>
