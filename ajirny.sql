@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2022 at 01:29 PM
+-- Generation Time: Feb 21, 2022 at 02:15 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -33,6 +33,18 @@ CREATE TABLE `categories` (
   `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `image`) VALUES
+(1, 'Fixed Desk', 'images/place1.jpg'),
+(2, 'Private Office Area', 'images/place2.jpg'),
+(3, ' Meeting Rooms', 'images/place3.jpg'),
+(4, 'Sound Recording Studios', 'images/place4.jpg'),
+(5, 'Photography Studios', 'images/place5.jpg'),
+(6, 'Coworking Spaces', 'images/place6.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +58,21 @@ CREATE TABLE `contact` (
   `message` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `message`) VALUES
+(1, '', '', ''),
+(2, 'Ahmad Marwan Kilani', 'A.marwankilani@gmail.com', ''),
+(3, 'Ahmad Marwan Kilani', 'A.marwankilani@gmail.com', 'sdasdsdsda'),
+(4, 'Ahmad Marwan Kilani', 'A.marwankilani@gmail.com', 'sdasdsdsda'),
+(5, 'Ahmad Marwan Kilani', 'A.marwankilani@gmail.com', 'sdasdsdsda'),
+(6, 'Ahmad Marwan Kilani', 'A.marwankilani@gmail.com', 'sdasdsdsda'),
+(7, 'Ahmad Marwan Kilani', 'mike@gmail.com', ''),
+(8, 'Ahmad Marwan Kilani', 'mike@gmail.com', ''),
+(9, 'Ahmad Marwan Kilani', 'mike@gmail.com', '');
+
 -- --------------------------------------------------------
 
 --
@@ -53,13 +80,25 @@ CREATE TABLE `contact` (
 --
 
 CREATE TABLE `places` (
-  `id` int(13) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `place_id` int(13) NOT NULL,
+  `place_name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
-  `images` text NOT NULL,
+  `place-image` text NOT NULL,
   `category_id` int(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `places`
+--
+
+INSERT INTO `places` (`place_id`, `place_name`, `description`, `price`, `place-image`, `category_id`) VALUES
+(1, 'abdoun starbux', 'the worst coffee shop ever', '12 jd', '', 1),
+(2, 'nostrdam', 'the best of all offices ', '13', '', 1),
+(3, 'shaweesh building', 'the shaweesh', '100000', '', 2),
+(4, 'mecca mall offices ', 'dundee', '55', '', 2),
+(5, 'shahmah', 'the valley of kings\r\n', '277', '', 4),
+(6, 'blooon', 'adcacasc', '3232', '', 4);
 
 -- --------------------------------------------------------
 
@@ -108,6 +147,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`, `email`, `image`, `phone`) VALUES
+(10, 'science', 'MAn12345!', 'mike@gmail.com', '', 0);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -127,7 +173,7 @@ ALTER TABLE `contact`
 -- Indexes for table `places`
 --
 ALTER TABLE `places`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`place_id`),
   ADD KEY `places_ibfk_1` (`category_id`);
 
 --
@@ -160,19 +206,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT;
+  MODIFY `place_id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `place_contact`
@@ -190,7 +236,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
@@ -207,13 +253,13 @@ ALTER TABLE `places`
 --
 ALTER TABLE `place_contact`
   ADD CONSTRAINT `place_contact_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `place_contact_ibfk_2` FOREIGN KEY (`place_id`) REFERENCES `places` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `place_contact_ibfk_2` FOREIGN KEY (`place_id`) REFERENCES `places` (`place_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `reservations`
 --
 ALTER TABLE `reservations`
-  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`place_id`) REFERENCES `places` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`place_id`) REFERENCES `places` (`place_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `reservations_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
