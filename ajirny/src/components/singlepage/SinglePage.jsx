@@ -44,8 +44,12 @@ function SinglePage() {
             <h2>Place price : <span>{data.price} JOD / 1 Hours</span> </h2>
           </div>
           <div className="singlebutton">
-            <button className="btn btn-primary" ><Link className="singlepage__btn" to="/reservationday" state={{ place: data.name }}>Book For Days</Link> </button>
-            <button className="btn btn-primary"> <Link className="singlepage__btn" to="/reservation" state={{ place: data.name }}>Contact For Place</Link>  </button>
+            <button className="btn btn-primary" >
+              {(JSON.parse(localStorage.getItem('current-user')) ? <Link className="singlepage__btn" to="/reservationday" state={{ place: data.name }}>Book For Days</Link> : <Link to='/login'>Book For Days</Link>)}
+              </button>
+            <button className="btn btn-primary"> 
+              {(JSON.parse(localStorage.getItem('current-user')) ? <Link className="singlepage__btn" to="/reservation" state={{ place: data.name }}>Contact For Place</Link> : <Link to='/login'>Contact For Place</Link>)}
+            </button>
           </div>
         </div>
 

@@ -34,14 +34,6 @@ function Contact() {
          )
         } )
       }
-
-    // const navigate = useNavigate();
-    // useEffect(()=>{
-    //   if(!JSON.parse(localStorage.getItem('current-user'))){
-    //     navigate('/login');
-    //   }
-    // })  
-
   return (
     <div className="container">
       <div class="contact-bar">
