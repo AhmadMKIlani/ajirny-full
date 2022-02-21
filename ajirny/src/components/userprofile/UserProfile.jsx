@@ -17,7 +17,6 @@ function UserProfile() {
 
     
        <div className="container">
-           
     <div className="content">
       <div className="left-side">
         <div className="address details">
@@ -26,17 +25,15 @@ function UserProfile() {
         
       </div>
       <div className="right-side"  >
-      <div className="topic-text"> About You </div>
+      <div className="topic-text user-header"> <h2> User info </h2> </div>
             <div className='right-bar'>
             <ul>
                 <li> Name: </li>
                 <li> Email: </li>
-                <li> Phone: </li>
             </ul>
 
             <ul className='second-ul '>
                 <li> {user.name} </li>
-                <li> {user.email} </li>
                 <li> {user.email} </li>
             </ul>
             </div>

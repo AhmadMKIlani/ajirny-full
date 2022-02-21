@@ -28,20 +28,20 @@ function SinglePage() {
   return (<>{
     loading && <section className="restaurant1 top" id="restaurant">
       <div className="singlepage__container flex">
-        <div className="left">
-          <img src={data.place_image} alt="place for rent" />
+        <div className="left-single">
+          <img src={data.place_image} alt="place for rent" className='place-img' />
         </div>
         <div className="right">
           <div className="singlename">
-            <h2>Places Name : {data.name}</h2>
+            <h3>Places Name : {data.place_name}</h3>
           </div>
           <div className="singledesc">
-            <h2>Info about the place:</h2>
+            <h3>Info about the place:</h3>
             <p>{data.description}
             </p>
           </div>
           <div className="singleprice">
-            <h2>Place price : <span>{data.price} JOD / 1 Hours</span> </h2>
+            <h3>Place price : <span>{data.price} JOD / 1 Hours</span> </h3>
           </div>
           <div className="singlebutton">
             <button className="btn btn-primary" >
