@@ -28,7 +28,7 @@ function Login() {
                 console.log(error.response)
             });
             navigate('/');
-
+            window.location.reload();
     }
     return (
         <div className='login'>

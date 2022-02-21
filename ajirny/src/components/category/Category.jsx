@@ -43,7 +43,6 @@ const Category = () => {
 
         
         <div className="box zone">
-        <h2 className='cat-text'>{category.name}</h2>
             <Link to="/singleCat" className='cat-link'
             onClick={(id, name) =>
             subCat(category.id, category.name)
