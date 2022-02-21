@@ -34,7 +34,7 @@ const orders=JSON.parse(localStorage.getItem('orders'));
         const filterorder = orders.filter(order => order.place === place.place);
         console.log(filterorder);
         if (filterorder.length > 0) {
-          filterorder.map(contact => ((contact.date === date && contact.time === time) ? showError() : localStorage.setItem('orders', JSON.stringify([...orders, order]))
+          filterorder.map(contact => ((contact.date === date) ? showError() : localStorage.setItem('orders', JSON.stringify([...orders, order]))
           ))
         }
       }
