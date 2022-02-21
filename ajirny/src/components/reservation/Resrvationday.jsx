@@ -10,8 +10,9 @@ const [dateError, setDateError] = useState(false);
 
 const location = useLocation()
 const place =location.state;
-  const today = new Date()
-  const currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-';    
+const today = new Date()
+const currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-';    
+const days = [];
   const saveOrder =(e)=>{
       e.preventDefault();
       const order = {
@@ -29,17 +30,19 @@ const place =location.state;
       }
       else {
         const filterorder = orders.filter(order => order.place === place.place);
-        console.log(filterorder);
         if (filterorder.length > 0) {
-          const num_of_days = (toDate.split('-')[(toDate.split('-')).length - 1]) - (fromDate.split('-')[(fromDate.split('-')).length - 1])
-          const days = [];
-          for(let i =0; i<=num_of_days;i++){
-            days.push(`${currentDate}${parseInt(fromDate.split('-')[(fromDate.split('-')).length - 1]) +i}`)
-          }
-          console.log(fromDate);
-          console.log(toDate);
-          filterorder.map(() => ((!days.includes(fromDate) && !days.includes(toDate) && fromDate !== '' && toDate !== '') ? localStorage.setItem('orders', JSON.stringify([...orders, order])):showError() 
-          ))
+          const num_of_days = (toDate.split('-')[(toDate.split('-')).length - 1]) - (fromDate.split('-')[(fromDate.split('-')).length - 1]) +1
+          console.log('number of orders' + num_of_days);
+          filterorder.forEach(element => {
+            for(let i =0; i<num_of_days;i++){
+              days.push(`${currentDate}${parseInt(element.fromDate.split('-')[(element.fromDate.split('-')).length - 1]) +i}`)
+            }
+            filterorder.map(() => ((!days.includes(fromDate) && !days.includes(toDate)) ? localStorage.setItem('orders', JSON.stringify([...orders, order])):showError() 
+            ))
+            console.log(days);
+            console.log(fromDate);
+            console.log(toDate);
+          });
         }
       }
     setFromDate('');
