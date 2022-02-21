@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './style.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 function Reservation() {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
@@ -9,11 +9,14 @@ function Reservation() {
   const [time, setTime] = useState("")
   const [dateError, setDateError] = useState(false);
   const location = useLocation()
+  const navigate = useNavigate();
   const place = location.state;
   const orders = JSON.parse(localStorage.getItem('PlaceContact'));
   const today = new Date()
   const currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
   console.log(currentDate);
+
+  
   const saveOrder = (e) => {
     e.preventDefault();
     const order = {
@@ -31,12 +34,12 @@ function Reservation() {
       const filterorder = orders.filter(order => order.place === place.place);
       console.log(filterorder);
       if (filterorder.length > 0) {
-        console.log('hello');
-        filterorder.map(contact => ((contact.date === date && contact.time === time) ? showError(): localStorage.setItem('PlaceContact', JSON.stringify([...orders, order]))
-        ))
+        filterorder.map(contact => ((contact.date === date && contact.time === time) ? showError() : localStorage.setItem('PlaceContact', JSON.stringify([...orders, order]))
+      ))
       }
     }
   }
+
   const showError = () =>{
     setDateError(() => true) 
   }
@@ -59,7 +62,8 @@ function Reservation() {
         <input type="date" placeholder="Enter Date" name="psw" onChange={(e) => setDate(e.target.value)} min={currentDate} required />
 
         {dateError && <p className='contact-error'>This time is not avilable, choose another one!</p>}
-        <button type="submit" className="btn">Send</button>
+        <button type="submit" className="btn">Contact</button>
+        {/* <Link to= '/single'>Send</Link> */}
       </form>
     </div>
 
