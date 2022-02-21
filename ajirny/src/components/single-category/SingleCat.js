@@ -50,7 +50,7 @@ const SingleCat = () => {
                 <h2 className='cat-text'>{places[0].name}</h2>
                 <div className="box zone">
                     <h2 className='cat-text'>{place.place_name}</h2>
-                    <img src={place.image} alt={place.name} />
+                    <img src={place.place_image} alt={place.name} />
                 </div>
               </Link>
             </>))}
