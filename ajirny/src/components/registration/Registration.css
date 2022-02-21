@@ -18,7 +18,6 @@
     background-color: #fff;
     width: 35%;
     margin: auto;
-    height: 85%;
 }
 
 .registration__form input {
@@ -28,7 +27,6 @@
     border: 2px solid rgba(128, 128, 128, 0.747);
     border-radius: 10px;
     color: black;
-    height: 6vh;
     margin: 2vh;
     text-transform: lowercase;
 }

@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
-import './style.css'
-import { useLocation, useNavigate, Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import './style.css';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+import swal from 'sweetalert';
+
+
 function Reservation() {
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
@@ -29,6 +32,12 @@ function Reservation() {
     }
     if (orders == null) {
       localStorage.setItem('PlaceContact', JSON.stringify([order]))
+      swal({
+        title: "Registered Successfully!",
+        text: "Welcome!",
+        icon: "success",
+        button:"ok"
+      });
     }
     else {
       const filterorder = orders.filter(order => order.place === place.place);
@@ -36,6 +45,12 @@ function Reservation() {
       if (filterorder.length > 0) {
         filterorder.map(contact => ((contact.date === date && contact.time === time) ? showError() : localStorage.setItem('PlaceContact', JSON.stringify([...orders, order]))
       ))
+      swal({
+        title: "Registered Successfully!",
+        text: "Welcome!",
+        icon: "success",
+        button:"ok"
+      });
       }
     }
   }

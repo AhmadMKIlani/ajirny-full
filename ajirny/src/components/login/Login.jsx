@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
+
+
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,6 +23,12 @@ function Login() {
                         setCurrentUser(res.data[i].name);
                         localStorage.setItem('current-user', JSON.stringify(res.data[i]));
                         setInputError(false);
+                        swal({
+                            title: "Registered Successfully!",
+                            text: "Welcome!",
+                            icon: "success",
+                            button:"ok"
+                          });
                         navigate('/');
                         window.location.reload(true);
                         break;
