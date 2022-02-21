@@ -39,9 +39,6 @@ const days = [];
             }
             filterorder.map(() => ((!days.includes(fromDate) && !days.includes(toDate)) ? localStorage.setItem('orders', JSON.stringify([...orders, order])):showError() 
             ))
-            console.log(days);
-            console.log(fromDate);
-            console.log(toDate);
           });
         }
       }

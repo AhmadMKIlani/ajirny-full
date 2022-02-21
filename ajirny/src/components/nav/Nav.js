@@ -29,7 +29,7 @@ export const Nav = () => {
         <ul class="menu">
             <li><NavLink to='/categories'> Categories </NavLink></li>
             <li><NavLink to='/about'> About </NavLink></li>
-            <li><NavLink to='/singlepage'> Single </NavLink></li>
+            <li><NavLink to='/single'> Single </NavLink></li>
             <li><NavLink to='/contact'> Contact </NavLink></li>
             { !logout &&
               <><li><NavLink to='/login'> Login </NavLink></li>
