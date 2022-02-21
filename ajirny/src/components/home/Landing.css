@@ -127,8 +127,11 @@ p {
 .landing__buttons button {
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    color: #000;
     background-color: #C9AD82;
     margin: 0 2vw 5vh 2vw;
     border: none;
+}
+
+.landing__buttons button a {
+    color: black;
 }
