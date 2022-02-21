@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import './contact.css'
 // import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Contact() {
     const username = ((JSON.parse(localStorage.getItem("current-user"))).name) ? (JSON.parse(localStorage.getItem("current-user"))).name : " " ;
@@ -33,8 +35,12 @@ function Contact() {
         } )
       }
 
-
-      
+    // const navigate = useNavigate();
+    // useEffect(()=>{
+    //   if(!JSON.parse(localStorage.getItem('current-user'))){
+    //     navigate('/login');
+    //   }
+    // })  
 
   return (
     <div className="container">

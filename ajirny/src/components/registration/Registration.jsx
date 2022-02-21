@@ -40,6 +40,8 @@ function Registration() {
                     console.log(error)
                 });
             navigate('/');
+            window.location.reload(true);
+
         }
     }
     return (
