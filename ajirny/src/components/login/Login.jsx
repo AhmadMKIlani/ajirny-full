@@ -24,7 +24,7 @@ function Login() {
                         localStorage.setItem('current-user', JSON.stringify(res.data[i]));
                         setInputError(false);
                         swal({
-                            title: "Registered Successfully!",
+                            title: "login Successful!",
                             text: "Welcome!",
                             icon: "success",
                             button:"ok"

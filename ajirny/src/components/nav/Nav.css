@@ -35,12 +35,17 @@ body {
     /* border-right: 1px solid #f4f4f4; */
     text-decoration: none;
     font-weight: 500;
+    
   }
   
   .header li a:hover,
   .header .menu-btn:hover {
     /* background-color: #faf9f9; */
-    color: #A98958;
+    color: black;
+  }
+
+  .logo-img{
+    padding-top: 10px;
   }
   
   .header .logo {
@@ -49,6 +54,7 @@ body {
     padding: 0px 20px;
     text-decoration: none;
     padding-left: 20px;
+   
   }
   
   /* menu */
@@ -72,8 +78,14 @@ body {
   }
   .menu li a{
     font-size: bolder;
-    color: #816615 !important;
+    color: black !important;
   }
+
+  .menu li a:hover{
+    font-size: bolder;
+    color: #ffdca8 !important;
+  }
+
   .header .menu-icon .navicon {
     background: #333;
     display: block;

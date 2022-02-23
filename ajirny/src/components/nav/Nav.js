@@ -23,7 +23,7 @@ export const Nav = () => {
   return (
     <div>
        <header class="header">
-        <NavLink to='/' class="logo"> <img src={logo} /> </NavLink>
+        <NavLink to='/' class="logo"> <img className='logo-img' src={logo} /> </NavLink>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
